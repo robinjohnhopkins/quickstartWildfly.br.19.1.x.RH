@@ -79,6 +79,10 @@
                             <artifactId>ejb-in-ear-web</artifactId>
                             <contextRoot>/ejb-in-ear</contextRoot>
                         </webModule>
+                        <ejbModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>ejb-in-ear-ejb</artifactId>
+                        </ejbModule>
                     </modules>
                     <outputFileNameMapping>@{artifactId}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
                 </configuration>

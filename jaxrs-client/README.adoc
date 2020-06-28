@@ -143,3 +143,17 @@ include::../shared-doc/cd-deploy-project.adoc[leveloffset=+1]
 
 endif::[]
 
+
+//*************************************************
+// REST
+//*************************************************
+
+http://localhost:8080/jaxrs-client/rest/contacts/
+
+http://localhost:8080/jaxrs-client/rest/contacts/test2?id=1
+
+{"id":1,"name":"bob2","phoneNumber":"123","savedBy":"bill"}
+
+http://localhost:8080/jaxrs-client/rest/contacts/test
+
+

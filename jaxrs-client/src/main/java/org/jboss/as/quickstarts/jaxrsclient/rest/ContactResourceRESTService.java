@@ -88,10 +88,40 @@ public class ContactResourceRESTService {
 
     // Fetch a specific contact
     @GET
+    @Path("/test")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response test() {
+        Contact contact = new Contact();
+        contact.setId(1L);
+        contact.setName("bob1");
+        contact.setPhoneNumber("123");
+        contact.setSavedBy("bill");
+        return Response.ok(contact).build();
+    }
+
+    // Fetch a specific contact
+    @GET
+    @Path("/test2")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response test2(final @PathParam("id") Long id) {
+        Contact contact = new Contact();
+        contact.setId(1L);
+        contact.setName("bob2");
+        contact.setPhoneNumber("123");
+        contact.setSavedBy("bill");
+        contactsRepository.put(1L, contact);
+        return Response.ok(contact).build();
+    }
+
+
+    // Fetch a specific contact
+    @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getById(final @PathParam("id") Long id) {
         Contact contact = contactsRepository.get(id);
         return Response.ok(contact).build();
     }
+
+
 }
